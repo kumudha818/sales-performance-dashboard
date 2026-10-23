@@ -297,6 +297,19 @@ sql/03_import_validation.sql  → Loads CSV and validates counts
 
 ## Power BI Setup
 
+### Open the dashboard project
+
+The ready-to-open Power BI Desktop project is `powerbi/SalesPerformanceDashboard.pbip`.
+Open it in Power BI Desktop, select **Home → Refresh** to load the included CSV, then
+use **File → Save as** to create a `.pbix` copy for sharing or presenting. The project
+includes the cleaned synthetic dataset at `powerbi/sales_clean.csv` and a single-page
+report with sales, profit, order, and margin KPIs plus monthly, regional, and category
+visuals.
+
+If you clone this repository to a different folder, update the CSV path in
+`powerbi/SalesPerformanceDashboard.SemanticModel/definition/expressions.tmdl`
+to the cloned location before refreshing the report.
+
 ### 1. Install MySQL Connector
 Download and install: https://dev.mysql.com/downloads/connector/net/
 Select **MySQL Connector/NET 8.x**

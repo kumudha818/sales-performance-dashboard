@@ -1,0 +1,41 @@
+expression LoadSales =
+    let
+        Source = Csv.Document(
+            File.Contents("C:\Users\adimu\.gemini\antigravity-ide\scratch\Sales-Performance-Dashboard\powerbi\sales_clean.csv"),
+            [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]
+        ),
+        PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+        TypedColumns = Table.TransformColumnTypes(
+            PromotedHeaders,
+            {
+                {"row_id", Int64.Type},
+                {"order_id", type text},
+                {"order_date", type date},
+                {"ship_date", type date},
+                {"ship_mode", type text},
+                {"customer_id", type text},
+                {"customer_name", type text},
+                {"segment", type text},
+                {"country", type text},
+                {"state", type text},
+                {"city", type text},
+                {"region", type text},
+                {"product_id", type text},
+                {"category", type text},
+                {"sub_category", type text},
+                {"product_name", type text},
+                {"sales", type number},
+                {"quantity", Int64.Type},
+                {"discount", type number},
+                {"profit", type number}
+            },
+            "en-US"
+        ),
+        WithOrderMonth = Table.AddColumn(
+            TypedColumns,
+            "order_month",
+            each Date.StartOfMonth([order_date]),
+            type date
+        )
+    in
+        WithOrderMonth
