@@ -1,0 +1,14 @@
+relationship 730599dd-34cf-41bd-99b6-8690690bd387
+	joinOnDateBehavior: datePartOnly
+	fromColumn: fact_sales.order_date
+	toColumn: LocalDateTable_3b0ed39b-028f-4527-a8dc-9c7561a5b6c4.Date
+
+relationship ab4c4f96-0612-4379-8ea5-e7ea68b76274
+	joinOnDateBehavior: datePartOnly
+	fromColumn: fact_sales.ship_date
+	toColumn: LocalDateTable_c4157564-c09d-4cb5-b74e-0115ccc0b674.Date
+
+relationship e5798931-7eb1-4bf4-928f-a949bd27e9cd
+	joinOnDateBehavior: datePartOnly
+	fromColumn: fact_sales.order_month
+	toColumn: LocalDateTable_26b5fd0d-ad1d-4f0b-a35e-890182788339.Date

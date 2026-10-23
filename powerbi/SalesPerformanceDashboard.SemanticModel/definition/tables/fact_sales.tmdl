@@ -1,0 +1,226 @@
+table fact_sales
+	lineageTag: 81578427-cb62-46c6-b4ce-cc0f657a4927
+
+	measure 'Total Sales' = SUM(fact_sales[sales])
+		formatString: $#,##0.00
+		displayFolder: KPIs
+		lineageTag: 61e5b46b-fcc6-4c66-ae59-6e90bb18464a
+
+	measure 'Total Profit' = SUM(fact_sales[profit])
+		formatString: $#,##0.00
+		displayFolder: KPIs
+		lineageTag: fed2bb37-3448-48ef-ac0d-40d23575cc84
+
+	measure 'Total Orders' = DISTINCTCOUNT(fact_sales[order_id])
+		formatString: #,##0
+		displayFolder: KPIs
+		lineageTag: cb5b3a4f-3aff-445e-89f8-68ef0d00a2de
+
+	measure 'Profit Margin %' = DIVIDE([Total Profit], [Total Sales], 0)
+		formatString: 0.00%
+		displayFolder: KPIs
+		lineageTag: efdd966d-4688-4fb0-a270-b6d2df88b5b4
+
+	column row_id
+		dataType: int64
+		formatString: 0
+		lineageTag: cb578355-da36-458f-9555-077415cb5243
+		summarizeBy: sum
+		sourceColumn: row_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_id
+		dataType: string
+		lineageTag: f4461e98-5250-4a84-8c90-14cb6f8a56a8
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 9e35d410-bbd3-4f67-ab33-92cf18aea34c
+		summarizeBy: none
+		sourceColumn: order_date
+
+		variation Variation
+			isDefault
+			relationship: 730599dd-34cf-41bd-99b6-8690690bd387
+			defaultHierarchy: LocalDateTable_3b0ed39b-028f-4527-a8dc-9c7561a5b6c4.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ship_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 5fd5f87b-bee7-4f25-8f53-e821b7be06b0
+		summarizeBy: none
+		sourceColumn: ship_date
+
+		variation Variation
+			isDefault
+			relationship: ab4c4f96-0612-4379-8ea5-e7ea68b76274
+			defaultHierarchy: LocalDateTable_c4157564-c09d-4cb5-b74e-0115ccc0b674.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ship_mode
+		dataType: string
+		lineageTag: 2f2315e1-a70b-4227-9c1f-e6e1201cef95
+		summarizeBy: none
+		sourceColumn: ship_mode
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: string
+		lineageTag: 15e7af4c-86ff-41e0-8dbe-b9edc6aa7d58
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_name
+		dataType: string
+		lineageTag: b81c1dda-e72f-4118-8f9e-a4b58029d8b9
+		summarizeBy: none
+		sourceColumn: customer_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column segment
+		dataType: string
+		lineageTag: 7c3813ea-fc95-4940-a9b8-e95a7bf39fda
+		summarizeBy: none
+		sourceColumn: segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column country
+		dataType: string
+		lineageTag: aae064a6-28a6-4d85-bd10-dbfdcce1a5b8
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column state
+		dataType: string
+		lineageTag: 67e59735-9368-4de6-b3f5-5bcf604c0182
+		summarizeBy: none
+		sourceColumn: state
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: aea696e0-0f7a-4e67-a486-a655673790e4
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column region
+		dataType: string
+		lineageTag: 4e7406c0-48b8-4fc3-8f0c-f982441871ef
+		summarizeBy: none
+		sourceColumn: region
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_id
+		dataType: string
+		lineageTag: c5b1e990-61c0-453f-b6aa-80d6e1e2ec21
+		summarizeBy: none
+		sourceColumn: product_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column category
+		dataType: string
+		lineageTag: a7069e50-3cd9-4754-b97a-63a6abfe7f96
+		summarizeBy: none
+		sourceColumn: category
+
+		annotation SummarizationSetBy = Automatic
+
+	column sub_category
+		dataType: string
+		lineageTag: 70b10996-6271-4bed-b03d-23c615daf4a0
+		summarizeBy: none
+		sourceColumn: sub_category
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_name
+		dataType: string
+		lineageTag: 8b2287a6-11dc-4dd2-bdc8-3adf05ad8457
+		summarizeBy: none
+		sourceColumn: product_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column sales
+		dataType: double
+		lineageTag: a38b59b1-0593-49fb-a86e-b9d31beaf1a2
+		summarizeBy: sum
+		sourceColumn: sales
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: fa8aa7a0-813e-4237-8b27-da9b1a5f2989
+		summarizeBy: sum
+		sourceColumn: quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column discount
+		dataType: double
+		lineageTag: f423e3a5-01bc-40c8-98a1-6c057b98743a
+		summarizeBy: sum
+		sourceColumn: discount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column profit
+		dataType: double
+		lineageTag: 98024755-90b2-4c15-a4a1-648f954b6385
+		summarizeBy: sum
+		sourceColumn: profit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column order_month
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 25d5edaf-df83-48cd-a8f0-f229dffb1d45
+		summarizeBy: none
+		sourceColumn: order_month
+
+		variation Variation
+			isDefault
+			relationship: e5798931-7eb1-4bf4-928f-a949bd27e9cd
+			defaultHierarchy: LocalDateTable_26b5fd0d-ad1d-4f0b-a35e-890182788339.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition fact_sales = m
+		mode: import
+		source = #"LoadSales"

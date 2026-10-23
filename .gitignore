@@ -19,6 +19,7 @@ data/excel/*.xlsx
 
 # Power BI
 *.pbix
+powerbi/**/.pbi/
 
 # Credentials — NEVER commit
 *.env

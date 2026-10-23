@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "regional-sales",
   "position": {
     "x": 652,
@@ -27,6 +27,7 @@
                 }
               },
               "queryRef": "fact_sales.region",
+              "active": true,
               "displayName": "Region"
             }
           ]
