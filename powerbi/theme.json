@@ -1,0 +1,69 @@
+{
+  "name": "Sales Dashboard Theme",
+  "dataColors": [
+    "#1A2744",
+    "#2E6DA4",
+    "#3498DB",
+    "#1ABC9C",
+    "#27AE60",
+    "#F39C12",
+    "#E74C3C",
+    "#9B59B6",
+    "#34495E",
+    "#95A5A6"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#1A2744",
+  "tableAccent": "#2E6DA4",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "fontFamily": [{ "value": "Segoe UI" }],
+        "fontSize": [{ "value": 10 }]
+      }
+    },
+    "card": {
+      "*": {
+        "background": [{ "color": { "solid": { "color": "#FFFFFF" } } }],
+        "border": [{ "color": { "solid": { "color": "#1A2744" } }, "width": 2 }]
+      }
+    },
+    "page": {
+      "*": {
+        "background": [{ "color": { "solid": { "color": "#F8F9FA" } } }]
+      }
+    },
+    "clusteredBarChart": {
+      "*": {
+        "dataPoint": [{ "defaultColor": { "solid": { "color": "#2E6DA4" } } }]
+      }
+    },
+    "lineChart": {
+      "*": {
+        "dataPoint": [{ "defaultColor": { "solid": { "color": "#1A2744" } } }]
+      }
+    }
+  },
+  "textClasses": {
+    "callout": {
+      "fontSize": 28,
+      "fontFace": "Segoe UI",
+      "color": "#1A2744"
+    },
+    "title": {
+      "fontSize": 14,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#1A2744"
+    },
+    "header": {
+      "fontSize": 12,
+      "fontFace": "Segoe UI",
+      "color": "#2E6DA4"
+    },
+    "label": {
+      "fontSize": 10,
+      "fontFace": "Segoe UI",
+      "color": "#555555"
+    }
+  }
+}

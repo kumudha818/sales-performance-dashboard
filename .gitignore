@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+.env
+venv/
+.venv/
+
+# Data files — large CSV files (regenerate with generate_dataset.py)
+data/raw/sales_raw.csv
+data/processed/sales_clean.csv
+
+# Excel output (regenerate with export_analysis.py)
+data/excel/*.xlsx
+
+# Power BI
+*.pbix
+
+# Credentials — NEVER commit
+*.env
+secrets.ini
+my.ini.local
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
